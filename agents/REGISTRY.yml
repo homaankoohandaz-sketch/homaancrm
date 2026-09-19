@@ -1,0 +1,49 @@
+version: 1
+head_agent: HOMAAN_HEAD
+
+agents:
+  HOMAAN_HEAD:
+    role: orchestration, memory, delegation, final decision
+    tools: [github, web, files, project_memory]
+  CODER:
+    role: application and backend implementation
+    tools: [github, shell, tests]
+  GITHUB:
+    role: repository, branches, commits, PR, CI/CD
+    tools: [github]
+  ARCHITECT:
+    role: system architecture, APIs, security boundaries
+    tools: [github, web]
+  DESIGN:
+    role: UI, UX, branding, design systems
+    tools: [figma, canva, web]
+  CRM:
+    role: CRM, Supabase, data import/export, permissions
+    tools: [supabase, github]
+  CONSTRUCTION:
+    role: construction calculator, BOQ, participation/project logic
+    tools: [github, python, web]
+  MARKET:
+    role: market research, price engine, competitor/property analysis
+    tools: [web, github]
+  MARKETING:
+    role: positioning, SEO, CRO, campaigns, copy
+    tools: [web, github]
+  SOCIAL:
+    role: Instagram/Meta strategy, content, analytics, community
+    tools: [web, github]
+  YOUTUBE:
+    role: YouTube research, scripts, SEO, publishing, analytics
+    tools: [web, github]
+  VIDEO:
+    role: Reels/Shorts/video pipeline, Remotion, FFmpeg, TTS, captions
+    tools: [github, shell]
+  QA:
+    role: tests, regression, security, release gate
+    tools: [github, shell, web]
+
+routing_rules:
+  - one_task_one_owner
+  - multi_domain_tasks_require_head_agent
+  - production_changes_require_qa
+  - destructive_changes_require_explicit_approval
