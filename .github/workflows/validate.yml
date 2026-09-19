@@ -1,0 +1,24 @@
+name: Control Plane Validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Required files
+        run: |
+          test -f AGENTS.md
+          test -f agents/REGISTRY.yml
+          test -f agents/ROUTER.md
+          test -f control/ACCESS_MATRIX.md
+          test -f control/DECISIONS.md
+          test -f control/TASK_CONTRACT.md
+          test -f sources/REGISTRY.md
+      - name: Secret filename guard
+        run: |
+          ! find . -type f \( -name '.env' -o -name '*.pem' -o -name '*.key' \) -not -path './.git/*' | grep .
