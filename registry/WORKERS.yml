@@ -1,0 +1,65 @@
+version: 1
+
+# Registry contains capability declarations only.
+# Credentials are NEVER stored here.
+
+workers:
+  - id: claude
+    provider: anthropic
+    mode: adapter
+    capabilities: [coding, architecture, content, research]
+    status: planned
+
+  - id: codex
+    provider: openai
+    mode: adapter
+    capabilities: [coding, architecture, qa]
+    status: planned
+
+  - id: gemini
+    provider: google
+    mode: adapter
+    capabilities: [research, coding, multimodal]
+    status: planned
+
+  - id: grok
+    provider: xai
+    mode: adapter
+    capabilities: [research, reasoning]
+    status: planned
+
+  - id: github
+    provider: github
+    mode: connector
+    capabilities: [repository, branches, pull_requests, ci]
+    status: connected
+
+  - id: web-research
+    provider: chatgpt
+    mode: native
+    capabilities: [research]
+    status: connected
+
+  - id: design-figma
+    provider: figma
+    mode: connector
+    capabilities: [design]
+    status: optional
+
+  - id: design-canva
+    provider: canva
+    mode: connector
+    capabilities: [design, content]
+    status: optional
+
+  - id: automation-n8n
+    provider: n8n
+    mode: adapter
+    capabilities: [automation]
+    status: optional
+
+  - id: ai-gateway-omniroute
+    provider: omniroute
+    mode: gateway
+    capabilities: [model-routing, fallback, cost-routing]
+    status: optional
