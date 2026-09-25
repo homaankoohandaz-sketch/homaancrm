@@ -1,0 +1,33 @@
+version: 1
+
+capabilities:
+  research:
+    examples: [web_search, deep_research, competitor_analysis]
+  architecture:
+    examples: [system_design, api_design, security_review]
+  coding:
+    examples: [frontend, backend, mobile, tests, refactor]
+  design:
+    examples: [ui, ux, branding, design_system]
+  image:
+    examples: [generation, editing, compositing]
+  video:
+    examples: [reels, shorts, motion_graphics, editing]
+  audio:
+    examples: [voiceover, music, sound_design]
+  three_d:
+    examples: [3d_scene, model, architectural_visualization]
+  cad_gis:
+    examples: [cad, gis, site_analysis]
+  content:
+    examples: [copywriting, social_posts, scripts]
+  marketing:
+    examples: [seo, cro, campaigns, analytics]
+  publishing:
+    examples: [web_deploy, app_store, play_store, social_publish]
+  data:
+    examples: [sql, import, export, analytics]
+  qa:
+    examples: [functional, visual, security, regression]
+  automation:
+    examples: [workflow, scheduling, webhooks, api_integration]
